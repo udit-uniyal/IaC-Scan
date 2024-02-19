@@ -21,11 +21,7 @@ runs:
         run: pip install checkov > /dev/null
         shell: bash
 
-      - name: Print input details
-        run: echo ${{ github.head_ref }}
-        shell: bash
-
-      - name: Run Checkov scan and append results to JSON file
+      - name: Run IaC Scan
         run: |
           checkov -d . --quiet -o json > scan_results.json || true
         shell: bash 
