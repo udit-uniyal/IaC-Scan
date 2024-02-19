@@ -27,7 +27,7 @@ runs:
 
       - name: Run Checkov scan and append results to JSON file
         run: |
-          checkov -d . -o json > scan_results.json || true
+          checkov -d . --quiet -o json > scan_results.json || true
         shell: bash 
         
       - name: Print IaC Scan Results
