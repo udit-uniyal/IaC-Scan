@@ -18,7 +18,7 @@ runs:
   using: 'composite'
   steps: 
       - name: Install Checkov
-        run: pip install checkov
+        run: pip install checkov > /dev/null
         shell: bash
 
       - name: Print Env details
