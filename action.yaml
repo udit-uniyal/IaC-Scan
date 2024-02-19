@@ -28,7 +28,7 @@ runs:
       - name: Run Checkov scan and append results to JSON file
         run: |
           checkov -d . -o json > scan_results.json || true
-          # jq --arg repoLink "${{ github.server_url }}/${{ github.repository }}" --arg branch "${{ github.head_ref }}" '. += [{"details": {"repo": $repoLink, "branch": $branch}}]' scan_results.json > temp.json && mv temp.json scan_results.json 
+          jq --arg repoLink "${{ github.server_url }}/${{ github.repository }}" --arg branch "${{ github.head_ref }}" '. += [{"details": {"repo": $repoLink, "branch": $branch}}]' scan_results.json > temp.json && mv temp.json scan_results.json 
         shell: bash
         
       - name: Print IaC Scan Results
