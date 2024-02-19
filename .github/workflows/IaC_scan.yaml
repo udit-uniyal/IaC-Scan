@@ -18,7 +18,7 @@ jobs:
       - name: Run IaC Scan
         uses: ./
         with:      
-          token: "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzEwNDAwNzM3LCJqdGkiOiI4ZDRiNmQ3Y2IzODM0M2Y0YmRiMzc1MjIzNzM2NmI3MyIsImlzcyI6ImNzcG0uZGV2LmFjY3Vrbm94LmNvbSJ9.ZeHoaDVdF2vX70FWE7cxKfepst63hX1JeDOkvkPZicxXmYMv5CHi4wWZ1zbrF-5F0_2rV6Nb3dADC-qo4l99dbK4XmbzjSg4wgUKE6ObwoFUo17LuNpIv23_jpOOIkx2DvrSVZCDvAwLqQUCpBzZjoLr3nNWu_OUnHmiLN8D8ttz92EOhLOE7vjehXL5tMSoZYtHf5OzuvMjWxhAo1EJ94GxO0B5n-mg4qZXdm5_6AHwUdW9smZY_XQ38FlQhuEo21BkgP2DTwrpn9ZECYswJaK8atHBo7TaDwCbdaq8nLceLtZQYpXv61SAF_NdBQ9AOxyRuWQVQeFvyoM4wcfqUg"
+          token: "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzEwOTU1OTE5LCJqdGkiOiJiNDllMjZiZWJiOGM0ZTNkYWQ1YWRmYTUxMTlhYjdkYyIsImlzcyI6ImNzcG0uZGV2LmFjY3Vrbm94LmNvbSJ9.AFdaB6-GLBUdfkJdTopc92d08KSq-UlBa9_WKcBMlJVCtbI9zTkC7DaZLbtwySSu6WkirqA9ZeldpiJ4KYmgBK4L-EeDTfOO5ncBdIkg7hZUKQiDGZlw0URrQzWJjrZULTTdlHVyIvSq01FkyBGqJ97TAoCSf55H34Dte5Yks8aJShP4AqIznxBrnmCR9o8kP-r_bI7WguuThehZCuiPupGAm9Y30ZegN2-D2OTdB54yKPUsUhPVzo7Y1OPYVw9vWpoeHywIbfQQiViawz7xZhc4IRRap_TLfy3ZYN2Q3QFavHCBeEbfpXqKR4lcRXaJjJL7kedLRdPz1D8sESMw5Q"
           # repository_name: "udit-uniyal/vulnerable-to-test"
           endpoint: "cspm.dev.accuknox.com"
           tenant_id: "1034"
