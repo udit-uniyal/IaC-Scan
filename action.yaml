@@ -1,0 +1,41 @@
+name: 'Accuknox IaC Scan'
+description: 'Run Scan against infrastructure as code.'
+inputs:
+  token:
+    description: 'The token for authenticating with the CSPM panel.'
+    required: true
+  tenant_id:
+    description: 'The ID of the tenant associated with the CSPM panel.'
+    required: true
+  endpoint:
+    description: 'The URL of the CSPM panel to push the scan results to.'
+    required: true
+    default: 'cspm.demo.accuknox.com'
+  github_pat:
+    description: 'Environment variable name for a Github personal access token for scanning external modules sourced from private repositories'
+    required: false
+runs:
+  using: 'composite'
+  steps: 
+      - name: Install Checkov
+        run: pip install checkov
+
+      - name: Print Env details
+        run: echo ${{ github.head_ref }}
+
+      - name: Run Checkov scan and append results to JSON file
+        run: |
+          checkov -d . -o json > scan_results.json || true
+          jq --arg repoLink "${{ github.server_url }}/${{ github.repository }}" --arg branch "${{ github.head_ref }}" '. += [{"details": {"repo": $repoLink, "branch": $branch}}]' scan_results.json > temp.json && mv temp.json scan_results.json 
+        shell: bash
+
+      - name: Push report to CSPM panel
+        run: |
+          curl --location --request POST 'https://${{env.CSPM_URL}}/api/v1/artifact/?tenant_id=${{ env.TENANT_ID }}&data_type=IAC&save_to_s3=false' --header 'Tenant-Id: ${{ env.TENANT_ID }}' --header 'Authorization: Bearer ${{ env.CSPM_TOKEN }}' --form 'file=@"./scan_results.json"'
+
+      - name: Remove temporary files
+        run: |
+          rm scan_results.json
+branding:
+  icon: 'shield'
+  color: 'purple'
