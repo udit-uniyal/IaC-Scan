@@ -1,41 +1,6 @@
 name: 'Accuknox IaC Scan'
 description: 'Run Scan against infrastructure as code.'
 inputs:
-  file:
-    description: 'File with infrastructure code or packages to scan'
-    required: false
-  directory:
-    default: '.'
-    description: 'Directory with infrastructure code and/or package manager files to scan'
-    required: false
-  compact:
-    description: 'Do not display code blocks in output'
-    required: false
-  quiet:
-    description: 'display only failed checks'
-    required: false
-  output_format:
-    description: 'The format of the output. cli, json, junitxml, github_failed_only, or sarif (comma separated)'
-    required: false
-    default: 'json'
-  output_file_path:
-    description: 'Path and name for output file, needs to end with a comma for a single output format'
-    required: false
-  soft_fail:
-    description: 'do not return an error code if there are failed checks'
-    required: false
-  framework:
-    description: 'run only on a specific infrastructure'
-    required: false
-  skip_framework:
-    description: 'skip a specific infrastructure'
-    required: false
-  github_pat:
-    description: 'Environment variable name for a Github personal access token for scanning external modules sourced from private repositories'
-    required: false
-  enable_secrets_scan_all_files:
-    description: 'Scan all files for secrets'
-    required: false
   token:
     description: 'The token for authenticating with the CSPM panel.'
     required: true
@@ -46,6 +11,9 @@ inputs:
     description: 'The URL of the CSPM panel to push the scan results to.'
     required: true
     default: 'cspm.demo.accuknox.com'
+  github_pat:
+    description: 'Environment variable name for a Github personal access token for scanning external modules sourced from private repositories'
+    required: false
 runs:
   using: 'composite'
   steps: 
