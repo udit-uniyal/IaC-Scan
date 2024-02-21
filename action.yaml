@@ -29,7 +29,7 @@ runs:
 
       - name: Run IaC Scan
         run: |
-          checkov {{ env.directory }} {{ inputs.quiet }} -o json > scan_results.json || true
+          checkov $directory {{ inputs.quiet }} -o json > scan_results.json || true
         env:
           directory: "-d {{ inputs.directory }}"
         shell: bash 
