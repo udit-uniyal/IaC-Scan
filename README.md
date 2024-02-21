@@ -8,8 +8,7 @@ Github actions to install IaC vulnerability scanner.
 
 ## Inputs
 
-```yaml
-name: 'Accuknox IaC Scan'
+```yamldsfan'
 description: 'Run Scan against infrastructure as code.'
 inputs:
   token:
