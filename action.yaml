@@ -29,7 +29,7 @@ runs:
 
       - name: Run IaC Scan
         run: |
-          checkov -d {{ inputs.directory }} -o json > scan_results.json || true
+          checkov -d ${{ inputs.directory }} -o json > scan_results.json || true
         shell: bash 
         
       - name: Print IaC Scan Results
