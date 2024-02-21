@@ -22,4 +22,4 @@ jobs:
           endpoint: "cspm.dev.accuknox.com"
           tenant_id: "1034"
           directory: "."
-          quiet: ""
+
