@@ -32,8 +32,6 @@ runs:
       - name: Run IaC Scan
         run: |
           checkov ${{ env.dir }} -o json > scan_results.json || true
-        env:
-          dir: "-d ${{ inputs.directory }}
         shell: bash 
         
       - name: Print IaC Scan Results
