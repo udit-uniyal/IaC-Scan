@@ -8,6 +8,8 @@ on:
     branches:
       - main
 
+env:
+  dir: "-d ${{ input.directory }}"
 jobs:
   accuknox-cicd:
     runs-on: ubuntu-latest
