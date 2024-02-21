@@ -21,5 +21,5 @@ jobs:
           token: "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzEwOTU1OTE5LCJqdGkiOiJiNDllMjZiZWJiOGM0ZTNkYWQ1YWRmYTUxMTlhYjdkYyIsImlzcyI6ImNzcG0uZGV2LmFjY3Vrbm94LmNvbSJ9.AFdaB6-GLBUdfkJdTopc92d08KSq-UlBa9_WKcBMlJVCtbI9zTkC7DaZLbtwySSu6WkirqA9ZeldpiJ4KYmgBK4L-EeDTfOO5ncBdIkg7hZUKQiDGZlw0URrQzWJjrZULTTdlHVyIvSq01FkyBGqJ97TAoCSf55H34Dte5Yks8aJShP4AqIznxBrnmCR9o8kP-r_bI7WguuThehZCuiPupGAm9Y30ZegN2-D2OTdB54yKPUsUhPVzo7Y1OPYVw9vWpoeHywIbfQQiViawz7xZhc4IRRap_TLfy3ZYN2Q3QFavHCBeEbfpXqKR4lcRXaJjJL7kedLRdPz1D8sESMw5Q"
           endpoint: "cspm.dev.accuknox.com"
           tenant_id: "1034"
-          directory: .
+          directory: "."
           quiet: ""
