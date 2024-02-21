@@ -20,8 +20,7 @@ inputs:
   directory:
     description: 'dir to scan'
     required: false
-env:
-  dir: "-d ${{ inputs.directory }}
+
 
 runs:
   using: 'composite'
@@ -32,7 +31,9 @@ runs:
 
       - name: Run IaC Scan
         run: |
-          checkov $dir -o json > scan_results.json || true
+          checkov ${{ env.dir }} -o json > scan_results.json || true
+        env:
+          dir: "-d ${{ inputs.directory }}
         shell: bash 
         
       - name: Print IaC Scan Results
