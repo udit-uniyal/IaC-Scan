@@ -14,6 +14,12 @@ inputs:
   github_pat:
     description: 'Environment variable name for a Github personal access token for scanning external modules sourced from private repositories'
     required: false
+  quiet:
+    description: 'Environment variable name for a Github personal access token for scanning external modules sourced from private repositories'
+    required: false
+  directory:
+    description: 'dir to scan'
+    required: false
 runs:
   using: 'composite'
   steps: 
@@ -23,7 +29,7 @@ runs:
 
       - name: Run IaC Scan
         run: |
-          checkov -d . --quiet -o json > scan_results.json || true
+          checkov {{ inputs.directory }} {{ inputs.quiet }} -o json > scan_results.json || true
         shell: bash 
         
       - name: Print IaC Scan Results
